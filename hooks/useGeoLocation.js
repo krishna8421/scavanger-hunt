@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 
 const useGeoLocation = () => {
     const [location, setLocation] = useState({
         loading: true,
         coordinates: {latitude: "", longitude: ""},
     });
-    const [reload, setReload] = useState(false);
 
     const onSuccess = (location) => {
         setLocation({
@@ -15,7 +14,6 @@ const useGeoLocation = () => {
                 longitude: location.coords.longitude,
             },
         });
-        setReload(false);
     };
 
     const onError = (error) => {
@@ -35,15 +33,15 @@ const useGeoLocation = () => {
                 message: "Geolocation not supported",
             });
         }
-        setInterval(() => {
+        const interval = setInterval(() => {
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
         }, 1000);
+        return () => clearInterval(interval);
     }, []);
 
     return {
         loading: location.loading,
         coordinates: location.coordinates,
-        reload: () => setReload(!reload),
     };
 };
 
