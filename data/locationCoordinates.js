@@ -1,13 +1,13 @@
 export const locationCoordinates = {
-    first : {
+    first: {
         latitude: 25.620748,
         longitude: 85.048846
     },
-    second : {
+    second: {
         latitude: 25.620748,
         longitude: 85.048846
     },
-    third :{
+    third: {
         latitude: 25.620748,
         longitude: 85.048846
     }
