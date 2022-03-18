@@ -13,16 +13,15 @@ export default function Home() {
     return (
         <div
             className="flex flex-col overflow-y-auto overflow-x-hidden text-slate-200 items-center bg-black w-screen min-h-screen justify-center">
-            {/*{isAuth && (*/}
-            {/*    <AiOutlineLogout*/}
-            {/*        onClick={signOutUser}*/}
-            {/*        color="#ff3526"*/}
-            {/*        size={25}*/}
-            {/*        className="absolute top-6 right-6 cursor-pointer"*/}
-            {/*    />*/}
-            {/*)}*/}
-            {/*{!isAuth ? <Questions/> : <Auth/>}*/}
-            <Questions/>
+            {isAuth && (
+                <AiOutlineLogout
+                    onClick={signOutUser}
+                    color="#ff3526"
+                    size={25}
+                    className="absolute top-6 right-6 cursor-pointer"
+                />
+            )}
+            {!isAuth ? <Questions/> : <Auth/>}
         </div>
     );
 }
