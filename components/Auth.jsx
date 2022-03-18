@@ -1,12 +1,12 @@
 import {FcGoogle} from "react-icons/fc";
-import {signInWithRedirect, GoogleAuthProvider} from "firebase/auth";
+import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {auth} from "../firebase";
 
 export default function Auth() {
     const authWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         try {
-            await signInWithRedirect(auth, provider);
+            await signInWithPopup(auth, provider);
         } catch (error) {
             console.log(error);
         }
