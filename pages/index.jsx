@@ -21,7 +21,7 @@ export default function Home() {
                     className="absolute top-6 right-6 cursor-pointer"
                 />
             )}
-            {!isAuth ? <Questions/> : <Auth/>}
+            {isAuth ? <Questions/> : <Auth/>}
         </div>
     );
 }
