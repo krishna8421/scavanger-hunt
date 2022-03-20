@@ -5,6 +5,8 @@ module.exports = {
       fontFamily: {
         Gloria: ["Gloria Hallelujah", "serif"],
         Poppins: ["Poppins", "sans-serif"],
+        Oxygen: ["Oxygen", "sans-serif"],
+        "Special-Elite": ["Special Elite", "sans-serif"],
       },
     },
   },

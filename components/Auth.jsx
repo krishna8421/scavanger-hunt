@@ -9,6 +9,7 @@ import Image from "next/image";
 export default function Auth() {
   const router = useRouter();
   const { setLoading } = useAuth();
+
   const authWithGoogle = async () => {
     setLoading(true);
     const provider = new GoogleAuthProvider();
@@ -16,13 +17,14 @@ export default function Auth() {
       const data = await signInWithPopup(auth, provider);
       const uid = data.user.uid;
       if (uid) {
-        const AnsDocRef = doc(db, "answers", uid);
+        const AnsDocRef = doc(db, "users", uid);
         const docSnap = await getDoc(AnsDocRef);
         if (!docSnap.exists()) {
           await setDoc(AnsDocRef, {
             name: data.user.displayName,
             email: data.user.email,
             qNum: 0,
+            score: 0,
           });
         }
       }
@@ -34,6 +36,9 @@ export default function Auth() {
   };
   return (
     <>
+      <p className="font-Special-Elite py-2 mb-4 text-lg flex justify-center text-center text-sky-400 w-11/12">
+        You can not give up because life is a riddle
+      </p>
       <Image
         src={"/msc.png"}
         className="absolute"
@@ -42,12 +47,12 @@ export default function Auth() {
         height={200}
         alt="MSC"
       />
-      <p className="font-light text-sm my-4 font-Gloria">Presents</p>
-      <h1 className="text-3xl md:text-4xl font-Gloria mb-4">
+      <p className="font-light text-sm my-4 font-Gloria text-slate-300">Presents</p>
+      <h1 className="text-3xl text-slate-300 md:text-4xl font-Gloria mb-4 flex justify-center text-center">
         Frontend with Benefits
       </h1>
-      <p className="my-2 font-semibold">x</p>
-      <h1 className="text-3xl md:text-4xl font-Gloria mb-12">Scavenger Hunt</h1>
+      <p className="my-2 text-slate-300 font-semibold">x</p>
+      <h1 className="text-3xl text-slate-300 md:text-4xl font-Gloria mb-12">Scavenger Hunt</h1>
       <div
         onClick={authWithGoogle}
         className="flex p-2 cursor-pointer px-6 items-center justify-center border text-lg bg-gray-100 text-slate-900 border-slate-500 rounded-lg mt-8"

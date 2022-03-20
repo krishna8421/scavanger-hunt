@@ -1,12 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { doc, updateDoc, increment } from "firebase/firestore";
+import { doc, updateDoc, increment, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-export default function NormalQuestion({ question, hint, totalQue, setAnswer, answer }) {
+export default function NormalQuestion({
+  question,
+  hint,
+  totalQue,
+  points,
+  answer,
+}) {
   const { questionsNum, setQuestionsNum } = useAuth();
   const [inputVal, setInputVal] = useState("");
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+
+  useEffect(() => {
+    const getDataFromCloud = async () => {
+      const AnsDocRef = doc(db, "users", user.uid);
+      const res = await getDoc(AnsDocRef);
+      const data = res.data();
+      if (!data?.score && !loading) {
+        await updateDoc(AnsDocRef, { score: 0 });
+      }
+      if (!data?.qNum && !loading) {
+        await updateDoc(AnsDocRef, { qNum: 0 });
+      }
+    };
+    getDataFromCloud().then();
+  }, []);
+
   return (
     <>
       <div className="rounded-xl w-full bg-gray-900 py-2 px-4 mt-2 border border-slate-800 text-slate-300 overflow-x-hidden text-lg">
@@ -25,18 +47,31 @@ export default function NormalQuestion({ question, hint, totalQue, setAnswer, an
         <button
           onClick={async (e) => {
             if (
-              !e.target.className.split(" ").includes("cursor-not-allowed") &&
-              totalQue > questionsNum &&
+              !e.target.className.split(" ").includes("cursor-not-allowed") ||
+              totalQue > questionsNum ||
               user
             ) {
-              setQuestionsNum(parseInt(questionsNum, 10) + 1);
-              const AnsDocRef = doc(db, "answers", user.uid);
+              setQuestionsNum(questionsNum + 1);
+              const AnsDocRef = doc(db, "users", user.uid);
               await updateDoc(AnsDocRef, {
                 qNum: increment(1),
               });
-              const ans = answer;
-              ans.push(inputVal.toLowerCase().trim());
-              setAnswer(ans);
+
+              async function saveScore(isCorrect) {
+                const AnsDocRef = doc(db, "users", user.uid);
+                const res = await getDoc(AnsDocRef);
+                const data = res.data();
+                return updateDoc(AnsDocRef, {
+                  score: isCorrect ? data.score + points : data.score,
+                });
+              }
+              if (
+                inputVal.toLowerCase().trim() === answer.toLowerCase().trim()
+              ) {
+                await saveScore(true);
+              } else {
+                await saveScore(false);
+              }
             }
           }}
           className={`${

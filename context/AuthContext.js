@@ -2,7 +2,7 @@ import { useEffect, useState, useContext, createContext } from "react";
 import { auth, db } from "../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/router";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { doc, getDoc } from "firebase/firestore";
 
 const AuthContext = createContext();
@@ -14,10 +14,16 @@ export const AuthProvider = ({ children }) => {
   const route = useRouter();
   const [questionsNum, setQuestionsNum] = useState(0);
 
+  useEffect(() => {
+    if (questionsNum >= 7) {
+      setQuestionsNum(7);
+    }
+  }, [questionsNum]);
+
   const getPageFromFS = async () => {
     try {
       if (!loading && user) {
-        const AnsDocRef = doc(db, "answers", user.uid);
+        const AnsDocRef = doc(db, "users", user.uid);
         const res = await getDoc(AnsDocRef);
         const data = res.data();
         return data?.qNum || 0;
@@ -34,9 +40,9 @@ export const AuthProvider = ({ children }) => {
     })();
   }, [loading]);
 
-  useEffect(() => {
-    Cookies.set("questionsNum", questionsNum);
-  }, [questionsNum]);
+  // useEffect(() => {
+  //   Cookies.set("questionsNum", questionsNum);
+  // }, [questionsNum]);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
@@ -70,11 +76,19 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setIsAuth(false);
     await route.push("/");
-    Cookies.set("questionsNum", 0);
+    // Cookies.set("questionsNum", 0);
   };
   return (
     <AuthContext.Provider
-      value={{ user, loading, setLoading, isAuth, signOutUser, questionsNum, setQuestionsNum }}
+      value={{
+        user,
+        loading,
+        setLoading,
+        isAuth,
+        signOutUser,
+        questionsNum,
+        setQuestionsNum,
+      }}
     >
       {children}
     </AuthContext.Provider>

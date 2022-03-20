@@ -6,16 +6,13 @@ import Questions from "../components/Questions";
 import Image from "next/image";
 
 export default function Home() {
-  const { loading, isAuth, signOutUser } = useAuth();
+  const { loading, isAuth, signOutUser, user } = useAuth();
   if (loading) {
     return <Loading />;
   }
   return (
-    <div
-
-      className="flex  flex-col overflow-y-auto overflow-x-hidden text-slate-200 items-center bg-black w-screen min-h-screen pt-32">
-      <div
-        className="absolute top-0 w-full h-16 shadow-2xl shadow-slate-900 border-b-2 border-indigo-500 flex justify-between px-4 items-center">
+    <div className="flex  flex-col overflow-y-auto overflow-x-hidden text-slate-200 items-center bg-black w-screen min-h-screen pt-20">
+      <div className="absolute top-0 w-full h-16 shadow-2xl shadow-slate-900 border-b-2 border-indigo-500 flex justify-between px-4 items-center">
         <div className="flex gap-4 items-center">
           <Image
             src={"/msc.png"}
@@ -36,6 +33,7 @@ export default function Home() {
           />
         )}
       </div>
+      {user && <p className="mb-6 font-Oxygen text-lg">Welcome, {user.displayName}</p>}
       {isAuth ? <Questions /> : <Auth />}
     </div>
   );
