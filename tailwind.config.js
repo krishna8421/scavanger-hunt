@@ -1,14 +1,14 @@
 module.exports = {
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                Gloria: ["Gloria Hallelujah", "serif"],
-            },
-        },
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        Gloria: ["Gloria Hallelujah", "serif"],
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
