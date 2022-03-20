@@ -7,8 +7,4 @@ export const locationCoordinates = {
     latitude: 25.620748,
     longitude: 85.048846,
   },
-  third: {
-    latitude: 25.620748,
-    longitude: 85.048846,
-  },
 };

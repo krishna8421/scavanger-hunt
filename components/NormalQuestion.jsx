@@ -3,13 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { db } from "../firebase";
 
-export default function NormalQuestion({
-  question,
-  hint,
-  totalQue,
-  setAnswer,
-  answer,
-}) {
+export default function NormalQuestion({ question, hint, totalQue, setAnswer, answer }) {
   const { questionsNum, setQuestionsNum } = useAuth();
   const [inputVal, setInputVal] = useState("");
   const { user } = useAuth();
