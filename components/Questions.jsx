@@ -79,7 +79,7 @@ export default function Questions() {
     <FinalPage key={7} />,
   ];
   return (
-    <div className="max-w-[30rem] p-8 md:p-6 mb-8 shadow-lg shadow-slate-800/50 border border-slate-600 rounded-xl mx-2">
+    <div className="max-w-[30rem] bg-black p-8 md:p-6 mb-8 shadow-lg shadow-slate-800/50 border border-slate-600 rounded-xl mx-2">
       {questionsPage[questionsNum]}
     </div>
   );

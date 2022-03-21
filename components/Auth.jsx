@@ -36,7 +36,7 @@ export default function Auth() {
   };
   return (
     <>
-      <p className="font-Special-Elite py-2 mb-4 text-lg flex justify-center text-center text-sky-400 w-11/12">
+      <p className="font-Poppins py-2 mb-4 text-lg flex justify-center text-center text-sky-400 w-11/12">
         You can not give up because life is a riddle
       </p>
       <Image
@@ -47,16 +47,16 @@ export default function Auth() {
         height={150}
         alt="MSC"
       />
-      <p className="font-Special-Elite py-2 my-4 mt-2 md:text-5xl text-4xl text-center">
+      <p className="font-Poppins py-2 my-4 mt-2 md:text-5xl text-4xl text-center">
         Microsoft Student Community
         <br /> KIIT Chapter
       </p>
-      <p className="font-light text-sm my-2 mb-8 font-Gloria text-slate-300">Presents</p>
-      <h1 className="text-4xl text-slate-300 md:text-5xl name-style  mb-4 flex justify-center text-center">
+      <p className="font-light  text-lg my-2 mb-8 font-Open-Sans text-slate-300">Presents</p>
+      <h1 className="text-4xl text-slate-300 font-Righteous md:text-5xl name-style  mb-4 flex justify-center text-center">
         Frontend with Benefits
       </h1>
-      <p className="my-2 text-slate-300 font-semibold name-style">x</p>
-      <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style">Scavenger Hunt</h1>
+      <p className="my-2 text-slate-300 font-semibold name-style font-Righteous">x</p>
+      <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style font-Righteous">Scavenger Hunt</h1>
       <div
         onClick={authWithGoogle}
         className="flex p-2 mb-20 cursor-pointer px-6 items-center justify-center border text-lg bg-indigo-600 text-slate-200 border-slate-900 rounded-lg mt-8"

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FinalPage() {
   return (
-    <div className=" mx-auto flex justify-center text-center flex-col text-slate-200">
+    <div className=" mx-auto flex justify-center font-DM-Sans text-center flex-col text-slate-200">
       <div className="mx-auto flex justify-center my-4 relative h-64 w-96">
         <Image
           src="/cse.jpeg"
@@ -13,10 +13,10 @@ export default function FinalPage() {
         />
       </div>
       <a
-        className="pointer-cursor"
+        className="pointer-cursor py-4"
         href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jUKrpFUNk9BM1FMWElVNlkxTkRFMkcyMk44WEJSUC4u"
       >
-        <p className="name-style text-5xl mb-6">
+        <p className="font-Righteous name-style text-[rgb(96,179,250)] text-5xl mb-6">
           Frontend <br /> with <br /> Benefits
         </p>
       </a>

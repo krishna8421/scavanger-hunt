@@ -12,7 +12,7 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <div className="flex  flex-col overflow-hidden  text-slate-200 items-center bg-black w-screen min-h-screen pt-12">
+    <div className="flex  flex-col overflow-hidden  text-slate-200 items-center background-main w-screen min-h-screen pt-12">
       {isAuth && (
         <AiOutlineLogout
           onClick={signOutUser}

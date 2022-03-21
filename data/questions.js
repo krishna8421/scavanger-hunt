@@ -67,7 +67,7 @@ export const questions = {
   Q9: {
     question:
       "It is sometimes so strong that it can hold bonds together, yet can be broken without ever being touched.",
-    difficulty: "Medium",
+    difficulty: "Hard",
     points: 25,
     answer: ["promise", "promises", "trust", "trusts"],
   },
