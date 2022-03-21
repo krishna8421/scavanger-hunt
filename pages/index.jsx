@@ -6,13 +6,13 @@ import Questions from "../components/Questions";
 import Image from "next/image";
 
 export default function Home() {
-  const { loading, isAuth, signOutUser, user } = useAuth();
+  const { loading, isAuth, signOutUser, user, questionsNum} = useAuth();
   if (loading) {
     return <Loading />;
   }
   return (
     <div className="flex  flex-col overflow-y-auto overflow-x-hidden text-slate-200 items-center bg-black w-screen min-h-screen pt-20">
-      <div className="absolute top-0 w-full h-16 shadow-2xl shadow-slate-900 border-b-2 border-indigo-500 flex justify-between px-4 items-center">
+      {/* <div className="absolute top-0 w-full h-16 shadow-2xl shadow-slate-900 border-b-2 border-indigo-500 flex justify-between px-4 items-center">
         <div className="flex gap-4 items-center">
           <Image
             src={"/msc.png"}
@@ -24,16 +24,16 @@ export default function Home() {
           />
           <h2 className="font-Poppins text-slate-100 ">MSC</h2>
         </div>
-        {isAuth && (
+      </div> */}
+              {isAuth && (
           <AiOutlineLogout
             onClick={signOutUser}
             color="#ff3526"
             size={25}
-            className="cursor-pointer"
+            className="cursor-pointer absolute top-0 right-0 m-4"
           />
         )}
-      </div>
-      {user && <p className="mb-6 font-Oxygen text-lg">Welcome, {user.displayName}</p>}
+      {user && questionsNum!==7 ? <p className="mb-6 font-Oxygen text-lg">Hello, {user.displayName}</p>:""}
       {isAuth ? <Questions /> : <Auth />}
     </div>
   );

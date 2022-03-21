@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json}\""
-  },
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json}\"",
+    "export": "next build && next export"
+    },
   "dependencies": {
     "firebase": "^9.6.9",
     "js-cookie": "^3.0.1",

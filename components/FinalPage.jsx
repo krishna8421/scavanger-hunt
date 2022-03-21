@@ -1,20 +1,41 @@
+import Image from "next/image";
+
 export default function FinalPage() {
   return (
-    <div className="w-11/12 flex justify-center text-center flex-col text-slate-200">
-      <h1 className="mb-4">
-        Thank you for taking part in our scavenger hunt! now, sit tight and wait
-        for the results.🤘🏻
-      </h1>
-      <p>Cant wait to know who won❓ We cant either!</p>
-      <p>
-        Tune In with us on 27th march 2022 at, Campus 15, School of Computer
-        Engineering, KIIT.
-      </p>
-      <p className="mb-4 mt-2">
-        Do join us for the day from 10am - 1pm for the results!!!
-      </p>
-      <p>Stay tuned for more fun games like this until then,</p>
-      <p className="font-bold font-Oxygen mt-4 text-green-400">BE A FORCE FOR GOOD!!</p>
+    <div className=" mx-auto flex justify-center text-center flex-col text-slate-200">
+      <div className="mx-auto flex justify-center my-4 relative h-64 w-96">
+        <Image
+          src="/cse.jpeg"
+          alt="MSC"
+          // width="200"
+          // height="200"
+          layout="fill"
+          className="rounded-md absolute"
+          objectFit="cover"
+        />
+      </div>
+      <a
+        className="pointer-cursor"
+        href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jUKrpFUNk9BM1FMWElVNlkxTkRFMkcyMk44WEJSUC4u"
+      >
+        <p className="name-style text-5xl mb-6">
+          Frontend <br /> with <br /> Benefits
+        </p>
+      </a>
+      <div className="text-xl">
+        <p className="mb-4">Campus 15, School of Computer Science, KIIT</p>
+        <p>Time: 10AM - 2 PM, 27th March 22</p>
+        <p className="mt-4">Join in to know your results and prizes!!</p>
+      </div>
+      <div className="mx-auto flex justify-center my-4 relative h-64 w-96">
+        <Image
+          src="/moto.jpeg"
+          alt="MSC"
+          layout="fill"
+          className="rounded-md absolute"
+          objectFit="cover"
+        />
+      </div>
     </div>
   );
 }
