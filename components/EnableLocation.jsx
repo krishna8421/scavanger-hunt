@@ -5,9 +5,7 @@ export default function EnableLocation() {
   return (
     <div className="flex flex-col items-center">
       <h1 className="font-bold text-lg mb-8">Enable Location</h1>
-      <p>
-        Please enable location services.
-      </p>
+      <p>Please enable location services.</p>
       <button
         onClick={() => {
           router.reload();

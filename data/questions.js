@@ -2,9 +2,9 @@ export const questions = {
   Q1: {
     question:
       "You can see through it but not go through it, You can cover it up yet the light comes through it.",
-      difficulty: "Easy",
+    difficulty: "Easy",
     points: 10,
-    answer: ["window", "windows"],
+    answer: ["window", "windows", "glass"],
   },
   Q2: {
     url: "/plane.jpg",

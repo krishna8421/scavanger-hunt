@@ -47,7 +47,10 @@ export default function Auth() {
         height={150}
         alt="MSC"
       />
-      <p className="font-Special-Elite py-2 my-4 mt-2 md:text-5xl text-4xl text-center" >Microsoft Student Community<br/> KIIT Chapter</p>
+      <p className="font-Special-Elite py-2 my-4 mt-2 md:text-5xl text-4xl text-center">
+        Microsoft Student Community
+        <br /> KIIT Chapter
+      </p>
       <p className="font-light text-sm my-2 mb-8 font-Gloria text-slate-300">Presents</p>
       <h1 className="text-4xl text-slate-300 md:text-5xl name-style  mb-4 flex justify-center text-center">
         Frontend with Benefits
