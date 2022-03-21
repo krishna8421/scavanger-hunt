@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <AuthProvider>
-      <div className="bg-black">
+      <div className="bg-black overflow-hidden w-screen min-h-screen">
         <Component {...pageProps} />
       </div>
     </AuthProvider>
