@@ -10,8 +10,9 @@ export default function Questions() {
     <NormalQuestion
       totalQue={7}
       key={1}
+      qn={1}
       question={questions.Q1.question}
-      hint={questions.Q1.hint}
+      difficulty={questions.Q1.difficulty}
       points={questions.Q1.points}
       answer={questions.Q1.answer}
     />,
@@ -25,8 +26,9 @@ export default function Questions() {
     <NormalQuestion
       totalQue={7}
       key={3}
+      qn={2}
       question={questions.Q3.question}
-      hint={questions.Q3.hint}
+      difficulty={questions.Q3.difficulty}
       points={questions.Q3.points}
       answer={questions.Q3.answer}
     />,
@@ -41,8 +43,9 @@ export default function Questions() {
     <NormalQuestion
       totalQue={7}
       key={5}
+      qn={3}
       question={questions.Q5.question}
-      hint={questions.Q5.hint}
+      difficulty={questions.Q5.difficulty}
       points={questions.Q5.points}
       answer={questions.Q5.answer}
     />,
@@ -56,8 +59,9 @@ export default function Questions() {
     <NormalQuestion
       totalQue={7}
       key={7}
+      qn={4}
       question={questions.Q7.question}
-      hint={questions.Q7.hint}
+      difficulty={questions.Q7.difficulty}
       points={questions.Q7.points}
       answer={questions.Q7.answer}
     />,

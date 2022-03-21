@@ -9,7 +9,7 @@ import EnableLocation from "./EnableLocation";
 
 export default function LocationQuestion({ imgUrl, totalQue, latitude, longitude }) {
   const hint = "Find this Location to Proceed to the next Question";
-  const distanceRange = 592362;
+  const distanceRange = 592013;
   const [distance, setDistance] = useState(0);
   const toShow = distance < distanceRange && distance !== 0;
   const { loading, err, coordinates } = useGeoLocation();

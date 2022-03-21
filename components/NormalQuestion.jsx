@@ -3,13 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { doc, updateDoc, increment, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-export default function NormalQuestion({
-  question,
-  hint,
-  totalQue,
-  points,
-  answer,
-}) {
+export default function NormalQuestion({ question, difficulty, totalQue, points, answer, qn }) {
   const { questionsNum, setQuestionsNum } = useAuth();
   const [inputVal, setInputVal] = useState("");
   const { user, loading } = useAuth();
@@ -31,12 +25,13 @@ export default function NormalQuestion({
 
   return (
     <>
+      <p className="w-full mx-2">Riddle {qn} / 4 </p>
       <div className="rounded-xl w-full bg-gray-900 py-2 px-4 mt-2 border border-slate-800 text-slate-300 overflow-x-hidden text-lg">
         {question}
       </div>
-      <div className="text-slate-500 text-sm p-4">Hint: {hint}</div>
+      <div className="text-slate-500 text-sm p-4">Difficulty: {difficulty}</div>
       <div className="mt-8 text-md text-slate-300 ">
-        <p>Answer</p>
+        <p className="w-full mx-2">Answer</p>
         <input
           type="text"
           onChange={(e) => setInputVal(e.target.value)}
@@ -65,9 +60,8 @@ export default function NormalQuestion({
                   score: isCorrect ? data.score + points : data.score,
                 });
               }
-              if (
-                inputVal.toLowerCase().trim() === answer.toLowerCase().trim()
-              ) {
+              const input = inputVal.toLowerCase().trim();
+              if (answer.includes(input)) {
                 await saveScore(true);
               } else {
                 await saveScore(false);

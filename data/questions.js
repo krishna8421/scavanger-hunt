@@ -2,9 +2,9 @@ export const questions = {
   Q1: {
     question:
       "You can see through it but not go through it, You can cover it up yet the light comes through it.",
-    hint: "None",
+      difficulty: "Easy",
     points: 10,
-    answer: "window",
+    answer: ["window", "windows"],
   },
   Q2: {
     url: "/plane.jpg",
@@ -13,9 +13,9 @@ export const questions = {
   },
   Q3: {
     question: "What's strong enough to smash ships yet is afraid of the sun?",
-    hint: "None",
+    difficulty: "Medium",
     points: 20,
-    answer: "ice",
+    answer: ["ice", "water"],
   },
   Q4: {
     url: "/staircase.jpg",
@@ -24,9 +24,9 @@ export const questions = {
   },
   Q5: {
     question: "Without fingers I point and without guns I strike what am I?",
-    hint: "None",
+    difficulty: "Hard",
     points: 30,
-    answer: "clock",
+    answer: ["clock"],
   },
   Q6: {
     url: "/wheel.jpg",
@@ -35,8 +35,8 @@ export const questions = {
   },
   Q7: {
     question: "What question can you never answer yes to?",
-    hint: "None",
+    difficulty: "Tech",
     points: 40,
-    answer: "are you asleep?",
+    answer: ["are you asleep?"],
   },
 };

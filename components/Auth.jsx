@@ -1,4 +1,4 @@
-import { FcGoogle } from "react-icons/fc";
+import { BsGoogle } from "react-icons/bs";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -43,22 +43,23 @@ export default function Auth() {
         src={"/msc.png"}
         className="absolute"
         objectFit="cover"
-        width={200}
-        height={200}
+        width={150}
+        height={150}
         alt="MSC"
       />
-      <p className="font-light text-sm my-4 font-Gloria text-slate-300">Presents</p>
-      <h1 className="text-3xl text-slate-300 md:text-4xl font-Gloria mb-4 flex justify-center text-center">
+      <p className="font-Special-Elite py-2 my-4 mt-2 md:text-5xl text-4xl text-center" >Microsoft Student Community<br/> KIIT Chapter</p>
+      <p className="font-light text-sm my-2 mb-8 font-Gloria text-slate-300">Presents</p>
+      <h1 className="text-4xl text-slate-300 md:text-5xl name-style  mb-4 flex justify-center text-center">
         Frontend with Benefits
       </h1>
-      <p className="my-2 text-slate-300 font-semibold">x</p>
-      <h1 className="text-3xl text-slate-300 md:text-4xl font-Gloria mb-12">Scavenger Hunt</h1>
+      <p className="my-2 text-slate-300 font-semibold name-style">x</p>
+      <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style">Scavenger Hunt</h1>
       <div
         onClick={authWithGoogle}
-        className="flex p-2 cursor-pointer px-6 items-center justify-center border text-lg bg-gray-100 text-slate-900 border-slate-500 rounded-lg mt-8"
+        className="flex p-2 mb-20 cursor-pointer px-6 items-center justify-center border text-lg bg-indigo-600 text-slate-200 border-slate-900 rounded-lg mt-8"
       >
-        <FcGoogle />
-        <div className="pl-4">Login with Google</div>
+        <BsGoogle />
+        <div className="pl-4 font-Poppins">Play Now</div>
       </div>
     </>
   );
