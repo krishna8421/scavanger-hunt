@@ -2,7 +2,7 @@ import { useEffect, useState, useContext, createContext } from "react";
 import { auth, db } from "../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/router";
-// import Cookies from "js-cookie";
+import { TOTAL_Q } from "../constants";
 import { doc, getDoc } from "firebase/firestore";
 
 const AuthContext = createContext();
@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }) => {
   const [questionsNum, setQuestionsNum] = useState(0);
 
   useEffect(() => {
-    if (questionsNum >= 7) {
-      setQuestionsNum(7);
+    if (questionsNum >= TOTAL_Q) {
+      setQuestionsNum(TOTAL_Q);
     }
   }, [questionsNum]);
 
@@ -39,10 +39,6 @@ export const AuthProvider = ({ children }) => {
       setQuestionsNum(pageNum);
     })();
   }, [loading]);
-
-  // useEffect(() => {
-  //   Cookies.set("questionsNum", questionsNum);
-  // }, [questionsNum]);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
@@ -76,7 +72,6 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setIsAuth(false);
     await route.push("/");
-    // Cookies.set("questionsNum", 0);
   };
   return (
     <AuthContext.Provider

@@ -6,9 +6,9 @@ import { useAuth } from "../context/AuthContext";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { db } from "../firebase";
 import EnableLocation from "./EnableLocation";
+import { TOTAL_Q } from "../constants";
 
-export default function LocationQuestion({ imgUrl, totalQue, latitude, longitude }) {
-  const hint = "Find this Location to Proceed to the next Question";
+export default function LocationQuestion({ imgUrl, latitude, longitude, hint }) {
   const distanceRange = process.env.NODE_ENV === "development" ? 99999999 : 10;
   const [distance, setDistance] = useState(0);
   const toShow = distance < distanceRange && distance !== 0;
@@ -30,7 +30,7 @@ export default function LocationQuestion({ imgUrl, totalQue, latitude, longitude
   }
   return (
     <>
-      <div className="relative w-full sm:h-96 h-80 ">
+      <div className="relative sm:h-96 h-80 w-96">
         <Image
           src={imgUrl}
           alt="Question Image"
@@ -64,7 +64,7 @@ export default function LocationQuestion({ imgUrl, totalQue, latitude, longitude
           onClick={async (e) => {
             if (
               !e.target.className.split(" ").includes("cursor-not-allowed") &&
-              totalQue > questionsNum &&
+              TOTAL_Q > questionsNum &&
               user
             ) {
               setQuestionsNum(questionsNum + 1);

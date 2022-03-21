@@ -4,6 +4,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 import Loading from "../components/Loading";
 import Questions from "../components/Questions";
 import Head from "next/head";
+import { TOTAL_Q } from "../constants";
 
 export default function Home() {
   const { loading, isAuth, signOutUser, user, questionsNum } = useAuth();
@@ -24,7 +25,7 @@ export default function Home() {
         <title>Scavenger Hunt</title>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
-      {user && questionsNum !== 7 ? (
+      {user && questionsNum !== TOTAL_Q ? (
         <p className="mb-6 font-Oxygen text-lg">Hello, {user.displayName}</p>
       ) : (
         ""

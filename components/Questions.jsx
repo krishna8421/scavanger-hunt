@@ -8,7 +8,6 @@ export default function Questions() {
   const { questionsNum } = useAuth();
   const questionsPage = [
     <NormalQuestion
-      totalQue={7}
       key={1}
       qn={1}
       question={questions.Q1.question}
@@ -17,14 +16,13 @@ export default function Questions() {
       answer={questions.Q1.answer}
     />,
     <LocationQuestion
-      totalQue={7}
       key={2}
       imgUrl={questions.Q2.url}
       latitude={questions.Q2.latitude}
       longitude={questions.Q2.longitude}
+      hint={questions.Q2.hint}
     />,
     <NormalQuestion
-      totalQue={7}
       key={3}
       qn={2}
       question={questions.Q3.question}
@@ -34,14 +32,13 @@ export default function Questions() {
     />,
 
     <LocationQuestion
-      totalQue={7}
       key={4}
       imgUrl={questions.Q4.url}
       latitude={questions.Q4.latitude}
       longitude={questions.Q4.longitude}
+      hint={questions.Q4.hint}
     />,
     <NormalQuestion
-      totalQue={7}
       key={5}
       qn={3}
       question={questions.Q5.question}
@@ -50,20 +47,34 @@ export default function Questions() {
       answer={questions.Q5.answer}
     />,
     <LocationQuestion
-      totalQue={7}
       key={6}
       imgUrl={questions.Q6.url}
       latitude={questions.Q6.latitude}
       longitude={questions.Q6.longitude}
+      hint={questions.Q6.hint}
     />,
     <NormalQuestion
-      totalQue={7}
       key={7}
       qn={4}
       question={questions.Q7.question}
       difficulty={questions.Q7.difficulty}
       points={questions.Q7.points}
       answer={questions.Q7.answer}
+    />,
+    <LocationQuestion
+      key={8}
+      imgUrl={questions.Q8.url}
+      latitude={questions.Q8.latitude}
+      longitude={questions.Q8.longitude}
+      hint={questions.Q8.hint}
+    />,
+    <NormalQuestion
+      key={9}
+      qn={5}
+      question={questions.Q9.question}
+      difficulty={questions.Q9.difficulty}
+      points={questions.Q9.points}
+      answer={questions.Q9.answer}
     />,
     <FinalPage key={7} />,
   ];

@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { doc, updateDoc, increment, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { TOTAL_Q, TOTAL_RIDDLE_Q } from "../constants";
 
-export default function NormalQuestion({ question, difficulty, totalQue, points, answer, qn }) {
+export default function NormalQuestion({ question, difficulty, points, answer, qn }) {
   const { questionsNum, setQuestionsNum } = useAuth();
   const [inputVal, setInputVal] = useState("");
   const { user, loading } = useAuth();
@@ -25,7 +26,9 @@ export default function NormalQuestion({ question, difficulty, totalQue, points,
 
   return (
     <>
-      <p className="w-full mx-2">Riddle {qn} / 4 </p>
+      <p className="w-full mx-2">
+        Riddle {qn} / {TOTAL_RIDDLE_Q}
+      </p>
       <div className="rounded-xl w-full bg-gray-900 py-2 px-4 mt-2 border border-slate-800 text-slate-300 overflow-x-hidden text-lg">
         {question}
       </div>
@@ -43,7 +46,7 @@ export default function NormalQuestion({ question, difficulty, totalQue, points,
           onClick={async (e) => {
             if (
               !e.target.className.split(" ").includes("cursor-not-allowed") ||
-              totalQue > questionsNum ||
+              TOTAL_Q > questionsNum ||
               user
             ) {
               setQuestionsNum(questionsNum + 1);
