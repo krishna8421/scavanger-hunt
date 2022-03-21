@@ -52,7 +52,7 @@ export default function LocationQuestion({ imgUrl, totalQue, latitude, longitude
         </div>
       </div>
       {toShow ? (
-        <span className="text-sm text-slate-300 w-full flex text-green-500 justify-center mt-4">
+        <span className="text-sm w-full flex text-green-500 justify-center mt-4">
           You can proceed now
         </span>
       ) : (
