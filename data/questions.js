@@ -2,7 +2,7 @@ export const questions = {
   Q1: {
     question: "Which is the best technical community in KIIT?",
     difficulty: "Easy",
-    points: 5,
+    points: 100,
     answer: [
       "msac",
       "msc",
@@ -29,7 +29,7 @@ export const questions = {
     question:
       "It has a still yet it lies still, usually behind a glass but always smiles through it, Fragile like a memory is but a memory it guards through it.",
     difficulty: "Easy",
-    points: 20,
+    points: 25,
     answer: ["photoframe", "frame", "photo frame", "pictureframes", "photoframes", "photo frames"],
   },
   Q4: {
@@ -54,7 +54,7 @@ export const questions = {
   Q7: {
     question:
       "A place where people are divided by furniture but united by a feeling of belongingness. A place having different houses far away from home.Something that in fact changed over the years yet we would do anything to go back to it.",
-    difficulty: "Medium",
+    difficulty: "Hard",
     points: 25,
     answer: ["classroom", "class hall", "lecture room", "classroom", "classes", "classrooms"],
   },
@@ -66,9 +66,9 @@ export const questions = {
   },
   Q9: {
     question:
-      "I am a plan of action that turns components of application periodically without sending a new code. I am known by what term?",
-    difficulty: "Hard",
+      "It is sometimes so strong that it can hold bonds together, yet can be broken without ever being touched.",
+    difficulty: "Medium",
     points: 25,
-    answer: ["feature flagging", "feature flag", "feature flags"],
+    answer: ["promise", "promises", "trust", "trusts"],
   },
 };
