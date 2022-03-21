@@ -7,8 +7,6 @@ export default function FinalPage() {
         <Image
           src="/cse.jpeg"
           alt="MSC"
-          // width="200"
-          // height="200"
           layout="fill"
           className="rounded-md absolute"
           objectFit="cover"
@@ -25,6 +23,7 @@ export default function FinalPage() {
       <div className="text-xl">
         <p className="mb-4">Campus 15, School of Computer Science, KIIT</p>
         <p>Time: 10AM - 2 PM, 27th March 22</p>
+        <p className="text-2xl mt-4 font-bold text-[rgb(96,179,250)]">Great Job !</p>
         <p className="mt-4">Join in to know your results and prizes!!</p>
       </div>
       <div className="mx-auto flex justify-center my-4 relative h-64 w-96">
