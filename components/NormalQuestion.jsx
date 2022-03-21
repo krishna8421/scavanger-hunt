@@ -60,7 +60,18 @@ export default function NormalQuestion({ question, difficulty, totalQue, points,
                   score: isCorrect ? data.score + points : data.score,
                 });
               }
+              async function saveAnswers(input) {
+                const AnsDocRef = doc(db, "users", user.uid);
+                const res = await getDoc(AnsDocRef);
+                const data = res.data();
+                const answersToSave = data.answers || [];
+                answersToSave.push(input);
+                return updateDoc(AnsDocRef, {
+                  answers: answersToSave,
+                });
+              }
               const input = inputVal.toLowerCase().trim();
+              saveAnswers(input);
               if (answer.includes(input)) {
                 await saveScore(true);
               } else {

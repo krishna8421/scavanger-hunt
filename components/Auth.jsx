@@ -31,7 +31,7 @@ export default function Auth() {
     } catch (error) {
       console.log(error);
     }
-    setLoading(true);
+    setLoading(false);
     await router.reload();
   };
   return (
