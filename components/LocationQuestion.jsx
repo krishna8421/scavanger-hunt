@@ -9,7 +9,7 @@ import EnableLocation from "./EnableLocation";
 import { TOTAL_Q } from "../constants";
 
 export default function LocationQuestion({ imgUrl, latitude, longitude, hint }) {
-  const distanceRange = process.env.NODE_ENV === "development" ? 99999999 : 10;
+  const distanceRange = process.env.NODE_ENV === "development" ? 99999999 : 50;
   const [distance, setDistance] = useState(0);
   const toShow = distance < distanceRange && distance !== 0;
   const { loading, err, coordinates } = useGeoLocation();
