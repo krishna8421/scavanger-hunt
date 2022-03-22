@@ -21,8 +21,8 @@ export const questions = {
   },
   Q2: {
     url: "/wheel.jpg",
-    latitude: 20.350252,
-    longitude: 85.819504,
+    latitude: 20.352676,
+    longitude: 85.819984,
     hint: "Campus 6 Auditorium",
   },
   Q3: {
@@ -34,8 +34,8 @@ export const questions = {
   },
   Q4: {
     url: "/staircase.jpg",
-    latitude: 20.352676,
-    longitude: 85.819984,
+    latitude: 20.350252,
+    longitude: 85.819504,
     hint: "Sculpture Park",
   },
   Q5: {
