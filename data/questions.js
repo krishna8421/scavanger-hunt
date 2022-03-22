@@ -6,7 +6,10 @@ export const questions = {
     answer: [
       "msac",
       "msc",
+      "msc-kiit",
+      "msckiit",
       "msc kiit",
+      "ms community",
       "msc kiit chapter",
       "microsoft students community",
       "microsoft student's community",
