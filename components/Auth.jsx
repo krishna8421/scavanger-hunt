@@ -56,7 +56,9 @@ export default function Auth() {
         Frontend with Benefits
       </h1>
       <p className="my-2 text-slate-300 font-semibold name-style font-Righteous">x</p>
-      <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style font-Righteous">Scavenger Hunt</h1>
+      <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style font-Righteous">
+        Scavenger Hunt
+      </h1>
       <div
         onClick={authWithGoogle}
         className="flex p-2 mb-20 cursor-pointer px-6 items-center justify-center border text-lg bg-indigo-600 text-slate-200 border-slate-900 rounded-lg mt-8"
