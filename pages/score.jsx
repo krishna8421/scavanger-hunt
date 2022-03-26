@@ -27,9 +27,9 @@ const Score = () => {
   }))
   return (
     <div className="flex  flex-col overflow-hidden  text-slate-200 items-center background-main w-screen min-h-screen pt-12">
-      {userDataArray.map((user)=> {
+      {userDataArray.map((user,i)=> {
         return (
-            <div className="flex w-[25rem] mb-16 items-center">
+            <div key={i} className="flex w-[25rem] mb-16 items-center">
                 <h1 className="font-Oxygen mr-8 flex-1">{user.name}</h1>
                 <h1 className="text-lg text-center flex-1">{user.score}</h1>
             </div>
