@@ -17,7 +17,7 @@ export default function FinalPage() {
         href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jUKrpFUNk9BM1FMWElVNlkxTkRFMkcyMk44WEJSUC4u"
       >
         <p className="font-Righteous name-style text-[rgb(96,179,250)] text-5xl mb-6">
-          Frontend <br /> with <br /> Benefits
+          DevOps <br /> Workshop
         </p>
       </a>
       <div className="text-xl">

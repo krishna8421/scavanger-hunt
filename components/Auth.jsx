@@ -53,7 +53,7 @@ export default function Auth() {
       </p>
       <p className="font-light  text-lg my-2 mb-8 font-Open-Sans text-slate-300">Presents</p>
       <h1 className="text-4xl text-slate-300 font-Righteous md:text-5xl name-style  mb-4 flex justify-center text-center">
-        Frontend with Benefits
+        DevOps Workshop
       </h1>
       <p className="my-2 text-slate-300 font-semibold name-style font-Righteous">x</p>
       <h1 className="text-4xl text-slate-300 md:text-5xl mb-8 name-style font-Righteous">
